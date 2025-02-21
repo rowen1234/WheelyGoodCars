@@ -8,5 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Tags extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'color'];
+    protected $fillable = [
+        'name',
+        'color'
+    ];
+
+    function cartag()
+    {
+        $this->belongsTo(CarTag::class);
+    }
 }
