@@ -28,4 +28,8 @@ class Cars extends Model
     {
         $this->belongsTo(CarTag::class);
     }
+    function user()
+    {
+        $this->belongsTo(User::class);
+    }
 }
