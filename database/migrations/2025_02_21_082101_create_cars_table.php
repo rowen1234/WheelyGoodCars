@@ -15,19 +15,20 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('user_id')->constrained();
             $table->string('license_plate');
             $table->string('make');
             $table->string('model');
             $table->decimal('price');
             $table->integer('mileage');
-            $table->integer('seats');
-            $table->integer('doors');
-            $table->integer('production_year');
-            $table->integer('weight');
-            $table->string('color');
-            $table->text('image');
-            $table->timestamp('sold_at');
-            $table->integer('views');
+            $table->integer('seats')->nullable();
+            $table->integer('doors')->nullable();
+            $table->integer('production_year')->nullable();
+            $table->integer('weight')->nullable();
+            $table->string('color')->nullable();
+            $table->text('image')->nullable();
+            $table->timestamp('sold_at')->nullable();
+            $table->integer('views')->default(0);
         });
     }
 
